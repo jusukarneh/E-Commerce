@@ -19,11 +19,10 @@ router.get('/', async (req, res) => {
 });
 
 
-//http://localhost:3001/api/catogories/1
+
 
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  
   try {
     const id = req.params.id
     const categoryData = await Category.findByPk(id,{
@@ -37,9 +36,8 @@ router.get('/:id', async (req, res) => {
 });
 
 
-//http://localhost:3001/api/categories
 router.post('/', async (req, res) => {
-  // create a new category
+ 
   try {
 
     const categoryData = await Category.create(req.body)
@@ -51,10 +49,9 @@ router.post('/', async (req, res) => {
 });
 
 
-//http://localhost:3001/api/categories/1
-//Put is an update
+
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
+ 
   try {
 
     const categoryData = await Category.update(req.body,{
@@ -69,11 +66,10 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-//http://localhost:3001/api/categories/1
-//delete is delete
+
 
 router.delete('/:id', async (req, res) => {
-  // delete a category by its `id` value  
+  
   try {
 
     const categoryData = await Category.destroy({
